@@ -1,7 +1,7 @@
-<div ng-controller="VideoController">
+<div class="offset-md-2 col-md-6 col-centered" ng-controller="VideoController">
     <h1>Video player</h1>
     <!-- <p>Vidéo : {{video}}</p> -->
-    <video id="my-video-player" class="row video-js vjs-default-skin" preload="none" width="640" height="480" poster="{{video.poster}}" ng-click="clickPlay()" >
+    <video id="my-video-player" class="row video-js vjs-default-skin" preload="none" width="640" height="480" poster="{{video.poster}}" ng-click="clickPlay()">
         <source ng-repeat="source in video.sources" ng-src="{{source.src}}" type='{{source.type}}' />
     </video>
     <div class="video-player-controls row">
@@ -15,18 +15,20 @@
 
     </div>
     <div class="checkpoints row" ng-show="checkpoints.points.length > 0">
-    <h3>Checkpoints</h3>
-    	<ul>
-    		<li ng-repeat="cp in checkpoints.points"><a ng-click="goToCheckpoint($index)">{{$index + 1}} : from {{cp.start}} sec. to {{cp.end}} sec.</a></li>
-    	</ul>
+        <h3>Checkpoints</h3>
+        <ul>
+            <li ng-repeat="cp in checkpoints.points"><a ng-click="goToCheckpoint($index)">{{$index + 1}} : from {{cp.start}} sec. to {{cp.end}} sec.</a>
+            </li>
+        </ul>
     </div>
     <div class="row">
-    	<h1>Custom link</h1>
-    	<p>You can use this app with a custom link. Please paste a direct link to any video hosted on the internet.</p>
-    	<form>
-    		<input ng-change="parseDirectLink()" ng-model="videoLink" type="url" placeholder="paste a direct link to a video..." />
+        <h1>Custom link</h1>
+        <p>You can use this app with a custom link. Please paste a direct link to any video hosted on the internet.</p>
+        <form>
+            <input ng-change="parseDirectLink()" ng-model="videoLink" type="url" placeholder="paste a direct link to a video..." />
+            <button type="button" ng-click="reset()">Reset default video</button>
 
-    	</form>
-    	<p>{{errorParsingLink}}</p>
+        </form>
+        <p ng-show="errorParsingLink">{{errorParsingLink}}</p>
     </div>
 </div>

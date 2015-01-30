@@ -63,21 +63,19 @@ angular.module('App')
                 }, (cp.end - cp.start) * 1000);
             };
             $scope.parseDirectLink = function() {
-            	console.log("testing " + $scope.videoLink);
-            	player.src({'type': 'video/mp4', src: $scope.videoLink}).play()
-            	
-			localinterval = $timeout(function() {
-                player.error(err);
-                if (err){
-            		$scope.errorParsingLink = "The link you provided did not point to a proper mp4 video. Please try again with a valid link. You can try http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4 . \n " + err;
-            	} else {
-            		$scope.errorParsingLink = "";
-            	}
-            }, 5000);
-
-            	
-            	
-            	// player.play();
+                console.log("testing " + $scope.videoLink);
+                player.src({
+                    'type': 'video/mp4',
+                    src: $scope.videoLink
+                }).play();
+                checkpoints.points = [];
             };
+
+            $scope.reset = function() {
+                $scope.videoLink = "";
+                player.src(video.sources);
+                player.play();
+
+            }
         }
     ]);
