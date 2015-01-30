@@ -1,0 +1,147 @@
+
+.anchor {
+    display: block;
+    position: relative;
+    top: -80px;
+    visibility: collapse;
+}
+body {
+    background-position: top;
+    background-attachment: fixed;
+    font-family: 'Coming Soon';
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    line-height: normal;
+    color: #bbbbbb;
+}
+.video-player-controls span {
+    /*width: 64px;
+    height: 64px;*/
+}
+
+.dropdown-menu {
+    /*width: 100%;*/
+}
+.growl {
+    top: 60px;
+}
+.border-row {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.admin-picture {
+    max-width: 120px;
+    max-height: 160px;
+    border: groove;
+}
+.btn {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+.form-group {
+    border: 1px solid black;
+    border-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 10px;
+}
+canvas {
+    background-color: #f3f3f3;
+    -webkit-box-shadow: 3px 3px 3px 0 #e3e3e3;
+    -moz-box-shadow: 3px 3px 3px 0 #e3e3e3;
+    box-shadow: 3px 3px 3px 0 #e3e3e3;
+    border: 1px solid #c3c3c3;
+    height: 100px;
+    margin: 6px 0 0 6px;
+}
+
+
+.well {
+    /*background-color: rgba(255, 255, 255, 0.65);
+    color: black;
+    border-radius: 10px;*/
+    
+    color: #bbbbbb;
+    background-color: rgba(0, 0, 0, 0.65);
+    border: hidden;
+}
+.drop-zone {
+    width: 100px;
+    height: 120px;
+}
+.myBody {
+    color: black;
+
+}
+.myHeader {
+    margin-top: 15px;
+    color: white;
+}
+.myHeader h1 {
+    font-family: 'Coming Soon';
+    font-size: 80px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    line-height: normal;
+}
+.navbar {
+    font-family: 'Coming Soon';
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    line-height: normal;
+    color: #bbbbbb;
+    background-color: rgba(0, 0, 0, 0.65);
+}
+.navbar-inverse .navbar-nav>li>a {
+    color: #bbbbbb;
+    border-radius: 10px;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: black;
+    background-color: rgba(255, 255, 255, 0.65);
+}
+.sidenav {
+    /*top:280px;*/
+    
+    font-family: 'Coming Soon';
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    line-height: normal;
+    color: #bbbbbb;
+    background-color: rgba(0, 0, 0, 0.65);
+}
+.sidenav li a {
+    color: #bbbbbb;
+}
+.sidenav li a:hover {
+    color: black;
+    background-color: rgba(255, 255, 255, 0.65);
+}
+.affix-top, .affix {
+    position: static;
+}
+@media (min-width: 979px) {
+    #sidebar.affix-top {
+        position: static;
+    }
+    #sidebar.affix {
+        position: fixed;
+        top: 70px;
+    }
+}
+/*.sidenav li.active {
+    border: 0 #eee solid;
+    border-right-width: 5px;
+}*/
+/*.item-main-picture {
+    height: 180px;
+    width: 240px;
+    background-color: gray;
+}*/

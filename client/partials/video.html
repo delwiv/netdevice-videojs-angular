@@ -1,0 +1,23 @@
+<div ng-controller="VideoController">
+    <h1>Video player</h1>
+    <!-- <p>Vidéo : {{video}}</p> -->
+    <video id="my-video-player" class="row video-js vjs-default-skin" preload="none" width="640" height="480" poster="{{video.poster}}" ng-click="clickPlay()" >
+        <source ng-repeat="source in video.sources" ng-src="{{source.src}}" type='{{source.type}}' />
+    </video>
+    <div class="video-player-controls row">
+        <span class="glyphicon glyphicon-backward" ng-click="clickBackward()"></span>
+        <span ng-hide="playing" class="glyphicon glyphicon-play" ng-click="clickPlay()"></span>
+        <span ng-show="playing" class="glyphicon glyphicon-pause" ng-click="clickPlay()"></span>
+        <span class="glyphicon glyphicon-forward" ng-click="clickForward()"></span>
+        <span><h2>{{remaining}}</h2></span>
+        <span><button ng-hide="checkpoints.launched" type="button" class="btn btn-info" ng-click="startCheckpoint()">Start checkpoint</button>
+        <button ng-show="checkpoints.launched" type="button" class="btn btn-danger" ng-click="stopCheckpoint()">Stop</button></span>
+
+    </div>
+    <div class="checkpoints" ng-show="checkpoints.points.length > 0">
+    <h3>Checkpoints</h3>
+    	<ul>
+    		<li ng-repeat="cp in checkpoints.points"><a ng-click="goToCheckpoint($index)">{{$index + 1}} : from {{cp.start}} sec. to {{cp.end}} sec.</a></li>
+    	</ul>
+    </div>
+</div>
