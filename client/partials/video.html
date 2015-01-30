@@ -14,10 +14,19 @@
         <button ng-show="checkpoints.launched" type="button" class="btn btn-danger" ng-click="stopCheckpoint()">Stop</button></span>
 
     </div>
-    <div class="checkpoints" ng-show="checkpoints.points.length > 0">
+    <div class="checkpoints row" ng-show="checkpoints.points.length > 0">
     <h3>Checkpoints</h3>
     	<ul>
     		<li ng-repeat="cp in checkpoints.points"><a ng-click="goToCheckpoint($index)">{{$index + 1}} : from {{cp.start}} sec. to {{cp.end}} sec.</a></li>
     	</ul>
+    </div>
+    <div class="row">
+    	<h1>Custom link</h1>
+    	<p>You can use this app with a custom link. Please paste a direct link to any video hosted on the internet.</p>
+    	<form>
+    		<input ng-change="parseDirectLink()" ng-model="videoLink" type="url" placeholder="paste a direct link to a video..." />
+
+    	</form>
+    	<p>{{errorParsingLink}}</p>
     </div>
 </div>
